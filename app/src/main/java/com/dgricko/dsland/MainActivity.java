@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     private Button joinNowButton, loginButton;
 
@@ -16,15 +16,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        joinNowButton = findViewById(R.id.join_btn);
-        loginButton = findViewById(R.id.login_btn);
+        joinNowButton = (Button) findViewById(R.id.join_btn);
+        loginButton = (Button) findViewById(R.id.login_btn);
 
-        loginButton.setOnClickListener(this);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        joinNowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    @Override
-    public void onClick(View v) {
-        Intent intent = new Intent(this,LoginActivity.class);
-        startActivity(intent);
-    }
+
 }
