@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "73577189871",
+    "firebase_url": "https://dsland-a0e6e.firebaseio.com",
+    "project_id": "dsland-a0e6e",
+    "storage_bucket": "dsland-a0e6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73577189871:android:c73406487eccc0ff9e661a",
+        "android_client_info": {
+          "package_name": "com.dgricko.dsland"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73577189871-qfb1qff01mnssik9dkddl7h455mfahqu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dgricko.dsland",
+            "certificate_hash": "208f830ab35a1bd9bd29e81185144ef75f6fc888"
+          }
+        },
+        {
+          "client_id": "73577189871-8jor36dssf2o0n7tl835lodefhgrg429.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjMspJDFFUVywIx6rrEos7PpUVlO06eZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73577189871-8jor36dssf2o0n7tl835lodefhgrg429.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
