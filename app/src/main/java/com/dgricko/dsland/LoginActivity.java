@@ -13,11 +13,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.dgricko.dsland.model.User;
+import com.dgricko.dsland.prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.rey.material.widget.CheckBox;
+
+import io.paperdb.Paper;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
     private ProgressDialog loadingBar;
     private String parentDbName = "Users";
+    private CheckBox rememberMeChk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,10 @@ public class LoginActivity extends AppCompatActivity {
         inputPassword = (EditText)findViewById(R.id.login_password_input);
         loginButton = (Button)findViewById(R.id.login_btn);
         loadingBar = new ProgressDialog(this);
+
+
+        rememberMeChk = (CheckBox)findViewById(R.id.remember_checkbox);
+        Paper.init(this);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +73,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void allowAccessToAccount(final String phone, final String password) {
+
+        if (rememberMeChk.isChecked()){
+            Paper.book().write(Prevalent.UserPhoneKey,phone);
+            Paper.book().write(Prevalent.UserPasswordKey,password);
+        }
+
         final DatabaseReference rootRef;
         rootRef = FirebaseDatabase.getInstance().getReference();
 
