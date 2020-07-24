@@ -48,6 +48,8 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void createAccount() {
         String name = inputName.getText().toString();
         String phone = inputPhone.getText().toString();
@@ -116,4 +118,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
