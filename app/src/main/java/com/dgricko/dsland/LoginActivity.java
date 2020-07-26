@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (parentDbName.equals("Admins")) {
                                 Toast.makeText(LoginActivity.this, "Admin panel", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
-                                Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
                                 startActivity(intent);
                             } else if (parentDbName.equals("Users")) {
 
