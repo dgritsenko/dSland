@@ -90,10 +90,10 @@ public class AdminAddProductActivity extends AppCompatActivity {
         
         if (imageUri == null){
             Toast.makeText(this, "Product image is empty", Toast.LENGTH_SHORT).show();
-        }else if (TextUtils.isEmpty(productDescription)){
-            inputProductDescription.setBackgroundResource(R.drawable.error_design);
         }else if (TextUtils.isEmpty(productName)){
             inputProductName.setBackgroundResource(R.drawable.error_design);
+        }else if (TextUtils.isEmpty(productDescription)){
+            inputProductDescription.setBackgroundResource(R.drawable.error_design);
         }else if (TextUtils.isEmpty(productPrice)){
             inputProductPrice.setBackgroundResource(R.drawable.error_design);
         }else {
