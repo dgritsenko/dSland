@@ -82,6 +82,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         userNameTextView.setText(Prevalent.currentOnlineUser.getName());
 
+        Picasso.get().load(Prevalent.currentOnlineUser.getImage())
+                .placeholder(R.drawable.person)
+                .into(profileImageView);
+
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -140,6 +144,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }  else if (id == R.id.nav_categories) {
 
         } else if (id == R.id.nav_settings) {
+            Intent intent = new Intent(HomeActivity.this,SettingsActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout) {
             Paper.book().destroy();
